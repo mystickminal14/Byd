@@ -23,7 +23,7 @@ export default function TestDrive() {
 
   return (
     <div className="bg-abyss pt-32 pb-24 md:pt-40">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-aqua">Feel It First</p>
         <AnimatedHeading text="Book a Test Drive" className="heading-lg text-foam" />
 
@@ -111,7 +111,7 @@ export default function TestDrive() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-aqua py-4 font-numeric text-sm font-bold tracking-[0.2em] text-abyss uppercase transition-transform hover:scale-[1.01]"
+                  className="w-full rounded-full bg-aqua py-4 font-numeric text-sm font-bold tracking-[0.1em] text-abyss uppercase transition-transform hover:scale-[1.01]"
                 >
                   Request Test Drive
                 </button>

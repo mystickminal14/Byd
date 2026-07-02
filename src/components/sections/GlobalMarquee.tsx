@@ -24,7 +24,7 @@ export default function GlobalMarquee() {
               <Counter value={s.value} />
               <span className="text-aurora">{s.suffix}</span>
             </p>
-            <p className="mt-2 text-xs tracking-[0.18em] text-mist-dim uppercase">{s.label}</p>
+            <p className="mt-2 text-xs tracking-[0.08em] text-mist-dim uppercase">{s.label}</p>
           </div>
         ))}
       </Reveal>

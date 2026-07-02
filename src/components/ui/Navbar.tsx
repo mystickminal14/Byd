@@ -105,7 +105,7 @@ export default function Navbar() {
             <span onMouseEnter={() => setMegaOpen(false)} className="ml-3">
               <Link
                 href="/test-drive"
-                className="block rounded-md bg-aqua px-6 py-2.5 font-numeric text-xs font-semibold tracking-[0.16em] text-abyss uppercase transition-colors hover:bg-foam"
+                className="block rounded-md bg-aqua px-6 py-2.5 font-numeric text-xs font-semibold tracking-[0.08em] text-abyss uppercase transition-colors hover:bg-foam"
               >
                 Test Drive
               </Link>
@@ -215,7 +215,7 @@ export default function Navbar() {
                         ))}
                       </div>
                     </div>
-                    <span className="glass flex items-center gap-2 rounded-full px-5 py-3 text-[10px] font-semibold tracking-[0.16em] text-foam uppercase transition-colors group-hover:text-aqua">
+                    <span className="glass flex items-center gap-2 rounded-full px-5 py-3 text-[10px] font-semibold tracking-[0.08em] text-foam uppercase transition-colors group-hover:text-aqua">
                       Discover
                       <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
@@ -240,7 +240,7 @@ export default function Navbar() {
             className="fixed inset-0 top-[76px] z-40 overflow-y-auto bg-abyss/97 px-6 pb-16 backdrop-blur-xl lg:hidden"
           >
             <p className="kicker mt-8 mb-4 text-mist-dim">Models</p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2">
               {VEHICLES.map((v) => (
                 <Link key={v.slug} href={`/models/${v.slug}`} className="card-dark overflow-hidden rounded-xl">
                   <img src={v.cardImage} alt={v.name} loading="lazy" className="aspect-[16/10] w-full object-cover" />
@@ -264,7 +264,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/test-drive"
-                className="mt-6 rounded-full bg-aqua px-8 py-4 text-center font-numeric text-sm font-semibold tracking-[0.18em] text-abyss uppercase"
+                className="mt-6 rounded-full bg-aqua px-8 py-4 text-center font-numeric text-sm font-semibold tracking-[0.08em] text-abyss uppercase"
               >
                 Book a Test Drive
               </Link>

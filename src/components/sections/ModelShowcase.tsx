@@ -18,7 +18,7 @@ export default function ModelShowcase() {
 
   return (
     <section className="aurora relative overflow-hidden bg-abyss py-24 md:py-36">
-      <div className="relative mx-auto max-w-[1600px] px-6 md:px-10">
+      <div className="relative mx-auto max-w-[1600px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-aqua">The Lineup</p>
         <AnimatedHeading text="Choose Your Current" className="heading-lg max-w-4xl text-foam" />
 
@@ -85,7 +85,7 @@ export default function ModelShowcase() {
                           {vehicle.name.replace('BYD ', '')}
                         </p>
                       </div>
-                      <span className="glass hidden items-center gap-2 rounded-full px-5 py-3 text-xs font-semibold tracking-[0.14em] text-foam uppercase transition-colors group-hover:text-aqua md:inline-flex">
+                      <span className="glass hidden items-center gap-2 rounded-full px-5 py-3 text-xs font-semibold tracking-[0.08em] text-foam uppercase transition-colors group-hover:text-aqua md:inline-flex">
                         Discover
                         <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5">
                           <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />

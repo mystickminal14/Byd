@@ -94,7 +94,7 @@ body {
   font-weight: 700;
   font-stretch: 118%;
   text-transform: uppercase;
-  font-size: clamp(2.5rem, 8.6vw, 7.75rem);
+  font-size: clamp(1.9rem, 8.6vw, 7.75rem);
   line-height: 0.94;
   letter-spacing: -0.015em;
 }
@@ -103,7 +103,7 @@ body {
   font-weight: 700;
   font-stretch: 115%;
   text-transform: uppercase;
-  font-size: clamp(2rem, 5.6vw, 4.75rem);
+  font-size: clamp(1.55rem, 5.6vw, 4.75rem);
   line-height: 0.98;
   letter-spacing: -0.01em;
 }
@@ -112,7 +112,7 @@ body {
   font-weight: 700;
   font-stretch: 112%;
   text-transform: uppercase;
-  font-size: clamp(1.5rem, 3.8vw, 2.9rem);
+  font-size: clamp(1.3rem, 3.8vw, 2.9rem);
   line-height: 1.02;
   letter-spacing: -0.005em;
 }
@@ -128,7 +128,7 @@ body {
   font-family: var(--font-numeric);
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 @utility numeric {

@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import type { Vehicle, Spec } from '@/types';
 import Link from '@/components/ui/Link';
 import AnimatedHeading from '@/components/animations/AnimatedHeading';
@@ -12,75 +13,113 @@ function spec(v: Vehicle, ...prefixes: string[]): string {
   return '—';
 }
 
-const ROWS: { label: string; value: (v: Vehicle) => string }[] = [
-  { label: 'Starting price', value: (v) => `Rs. ${formatLakh(v.startingPrice)}` },
-  { label: 'Blade Battery', value: (v) => spec(v, 'Battery') },
-  { label: 'Range', value: (v) => spec(v, 'Range') },
-  { label: 'Max power', value: (v) => spec(v, 'Max Power') },
-  { label: 'Max torque', value: (v) => spec(v, 'Max Torque') },
-  { label: 'DC fast charge', value: (v) => spec(v, 'DC Fast') },
-  { label: 'Seats', value: (v) => (spec(v, 'Seating') !== '—' ? spec(v, 'Seating') : '5') },
-  { label: 'Variants', value: (v) => String(v.variants.length) },
+const GROUPS: { group: string; rows: { label: string; value: (v: Vehicle) => string }[] }[] = [
+  {
+    group: 'Ownership',
+    rows: [
+      { label: 'Starting price', value: (v) => `Rs. ${formatLakh(v.startingPrice)}` },
+      { label: 'Variants', value: (v) => String(v.variants.length) },
+      { label: 'Body type', value: (v) => v.category },
+      { label: 'Seats', value: (v) => (spec(v, 'Seating') !== '—' ? spec(v, 'Seating') : '5') },
+    ],
+  },
+  {
+    group: 'Battery & Range',
+    rows: [
+      { label: 'Blade Battery', value: (v) => spec(v, 'Battery') },
+      { label: 'Range', value: (v) => spec(v, 'Range') },
+      { label: 'DC fast charge', value: (v) => spec(v, 'DC Fast') },
+      { label: 'V2L output', value: (v) => spec(v, 'V2L') },
+    ],
+  },
+  {
+    group: 'Performance',
+    rows: [
+      { label: 'Max power', value: (v) => spec(v, 'Max Power') },
+      { label: 'Max torque', value: (v) => spec(v, 'Max Torque') },
+      { label: '0–100 km/h', value: (v) => spec(v, '0–100') },
+      { label: 'Drivetrain', value: (v) => spec(v, 'Drivetrain') },
+    ],
+  },
 ];
 
 /**
- * Whole-range comparison: one horizontally-scrollable ledger with a sticky
- * spec column, so all six cars can be read side by side.
+ * Whole-range comparison. On desktop all six cars fit the viewport — no
+ * scrollbar — with grouped spec bands; below xl it degrades to a swipeable
+ * ledger with a sticky spec column.
  */
 export default function CompareTable({ vehicles }: { vehicles: Vehicle[] }) {
   return (
-    <section className="mt-24">
+    <section className="mt-20 md:mt-24">
       <p className="kicker mb-4 text-aqua">Side by Side</p>
       <AnimatedHeading text="Compare the Range" className="heading-md text-foam" />
 
       <Reveal className="mt-10">
-        <div className="card-dark overflow-x-auto rounded-3xl">
-          <table className="w-full min-w-[980px] border-collapse text-left">
+        <div className="card-dark overflow-x-auto rounded-2xl xl:overflow-visible">
+          <table className="w-full min-w-[840px] border-collapse text-left xl:min-w-0">
             <thead>
               <tr className="border-b border-abyss-line">
-                <th className="sticky left-0 z-10 bg-abyss-raised p-5 align-bottom">
-                  <span className="kicker text-[9px] text-mist-dim">Specification</span>
+                <th className="sticky left-0 z-10 w-[120px] bg-abyss-raised p-3 align-bottom md:p-4 xl:static">
+                  <span className="kicker text-[9px] text-mist-dim">Spec</span>
                 </th>
                 {vehicles.map((v) => (
-                  <th key={v.slug} className="p-5 pb-4">
+                  <th key={v.slug} className="p-3 pb-3 md:p-4">
                     <Link href={`/models/${v.slug}`} className="group block">
-                      <div className="overflow-hidden rounded-xl">
+                      <div className="overflow-hidden rounded-lg">
                         <img
                           src={v.cardImage}
                           alt={v.name}
                           loading="lazy"
-                          className="aspect-[16/10] w-36 object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="aspect-[16/10] w-full min-w-[104px] object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
-                      <p className="mt-3 font-display text-sm font-semibold whitespace-nowrap text-foam group-hover:text-aqua">
+                      <p className="display-name mt-2.5 text-[13px] whitespace-nowrap text-foam group-hover:text-aqua">
                         {v.name.replace('BYD ', '')}
                       </p>
-                      <p className="text-[10px] tracking-[0.14em] text-mist-dim uppercase">{v.category}</p>
+                      <p className="text-[9px] tracking-[0.1em] text-mist-dim uppercase">{v.badge}</p>
                     </Link>
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {ROWS.map((row, ri) => (
-                <tr key={row.label} className={ri % 2 ? '' : 'bg-abyss-soft/40'}>
-                  <td className="sticky left-0 z-10 bg-abyss-raised p-5 text-xs font-medium tracking-[0.1em] whitespace-nowrap text-mist uppercase">
-                    {row.label}
-                  </td>
-                  {vehicles.map((v) => (
-                    <td key={v.slug} className="numeric p-5 text-sm whitespace-nowrap text-foam">
-                      {row.value(v)}
+              {GROUPS.map((g) => (
+                <Fragment key={g.group}>
+                  <tr>
+                    <td
+                      colSpan={vehicles.length + 1}
+                      className="border-b border-abyss-line bg-abyss-soft/60 px-3 pt-4 pb-2 md:px-4"
+                    >
+                      <span className="kicker text-[9px] text-aqua">{g.group}</span>
                     </td>
+                  </tr>
+                  {g.rows.map((row, ri) => (
+                    <tr key={row.label} className={ri % 2 ? 'bg-abyss-soft/30' : ''}>
+                      <td className="sticky left-0 z-10 bg-abyss-raised p-3 text-[10px] font-medium tracking-[0.06em] whitespace-nowrap text-mist uppercase md:p-4 md:text-[11px] xl:static">
+                        {row.label}
+                      </td>
+                      {vehicles.map((v) => {
+                        const val = row.value(v);
+                        return (
+                          <td
+                            key={v.slug}
+                            className={`numeric p-3 text-xs md:p-4 md:text-[13px] ${val === '—' ? 'text-mist-dim' : 'text-foam'}`}
+                          >
+                            {val}
+                          </td>
+                        );
+                      })}
+                    </tr>
                   ))}
-                </tr>
+                </Fragment>
               ))}
-              <tr>
-                <td className="sticky left-0 z-10 bg-abyss-raised p-5" />
+              <tr className="border-t border-abyss-line">
+                <td className="sticky left-0 z-10 bg-abyss-raised p-3 md:p-4 xl:static" />
                 {vehicles.map((v) => (
-                  <td key={v.slug} className="p-5">
+                  <td key={v.slug} className="p-3 md:p-4">
                     <Link
                       href={`/models/${v.slug}`}
-                      className="inline-block rounded-full border border-abyss-line px-4 py-2 text-[10px] font-semibold tracking-[0.14em] text-mist uppercase transition-colors hover:border-aqua hover:text-aqua"
+                      className="inline-block rounded-md border border-abyss-line px-3.5 py-2 text-[9px] font-semibold tracking-[0.08em] text-mist uppercase transition-colors hover:border-aqua hover:text-aqua"
                     >
                       Explore
                     </Link>
@@ -90,6 +129,7 @@ export default function CompareTable({ vehicles }: { vehicles: Vehicle[] }) {
             </tbody>
           </table>
         </div>
+        <p className="mt-3 text-[11px] text-mist-dim xl:hidden">Swipe sideways to see the full range →</p>
       </Reveal>
     </section>
   );

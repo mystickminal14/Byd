@@ -29,7 +29,7 @@ export default function Models() {
   return (
     <>
       <div className="aurora relative bg-abyss pt-36 pb-24 md:pt-44">
-        <div className="relative mx-auto max-w-[1440px] px-6 md:px-10">
+        <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 md:px-10">
           {/* header */}
           <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
             <div>
@@ -48,7 +48,7 @@ export default function Models() {
               ].map((s) => (
                 <div key={s.l}>
                   <p className="numeric text-3xl font-semibold text-foam">{s.v}</p>
-                  <p className="mt-1 text-[10px] tracking-[0.16em] text-mist-dim uppercase">{s.l}</p>
+                  <p className="mt-1 text-[10px] tracking-[0.08em] text-mist-dim uppercase">{s.l}</p>
                 </div>
               ))}
             </Reveal>
@@ -63,7 +63,7 @@ export default function Models() {
                   key={f}
                   onClick={() => setFilter(f)}
                   className={cn(
-                    'group flex items-center gap-2 rounded-full px-6 py-2.5 font-numeric text-xs font-semibold tracking-[0.16em] uppercase transition-all',
+                    'group flex items-center gap-2 rounded-full px-6 py-2.5 font-numeric text-xs font-semibold tracking-[0.08em] uppercase transition-all',
                     filter === f ? 'bg-aqua text-abyss' : 'glass text-mist hover:text-foam',
                   )}
                 >

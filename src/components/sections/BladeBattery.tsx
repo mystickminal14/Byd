@@ -18,7 +18,7 @@ const PROOFS = [
 export default function BladeBattery() {
   return (
     <section className="relative overflow-hidden bg-pearl py-24 text-ink md:py-36">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <div className="grid items-end gap-8 md:grid-cols-[1fr_auto]">
           <div>
             <p className="kicker mb-4 text-electric">Core Technology</p>

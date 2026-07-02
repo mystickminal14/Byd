@@ -42,7 +42,7 @@ export default function MagneticButton({
   };
 
   const base = cn(
-    'group relative inline-flex cursor-pointer items-center gap-3 overflow-hidden rounded-md px-9 py-4 font-numeric text-sm font-semibold tracking-[0.18em] uppercase transition-shadow duration-500',
+    'group relative inline-flex cursor-pointer items-center gap-3 overflow-hidden rounded-md px-6 py-3.5 font-numeric text-xs font-semibold md:px-9 md:py-4 md:text-sm tracking-[0.08em] uppercase transition-shadow duration-500',
     variant === 'aurora' && 'text-abyss shadow-glow',
     variant === 'outline' && 'text-foam',
     variant === 'ghost' && 'text-foam',

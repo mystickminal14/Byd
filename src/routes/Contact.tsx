@@ -31,7 +31,7 @@ export default function Contact() {
 
   return (
     <div className="bg-abyss pt-32 pb-24 md:pt-40">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-aqua">Say Hello</p>
         <AnimatedHeading text="Talk to BYD Nepal" className="heading-lg text-foam" />
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-mist">

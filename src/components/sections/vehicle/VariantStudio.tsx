@@ -27,7 +27,7 @@ export default function VariantStudio({ vehicle }: { vehicle: Vehicle }) {
 
   return (
     <section className="border-t border-pearl-line bg-pearl py-24 text-ink md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-electric">Variants & Ownership</p>
         <AnimatedHeading text="Make It Yours" className="heading-md" />
 
@@ -86,7 +86,7 @@ export default function VariantStudio({ vehicle }: { vehicle: Vehicle }) {
                 <a
                   href={vehicle.brochures[0].file}
                   download
-                  className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-8 py-4 font-numeric text-sm font-semibold tracking-[0.16em] text-ink uppercase transition-colors hover:border-electric hover:text-electric"
+                  className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-8 py-4 font-numeric text-sm font-semibold tracking-[0.08em] text-ink uppercase transition-colors hover:border-electric hover:text-electric"
                 >
                   Download Brochure
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">

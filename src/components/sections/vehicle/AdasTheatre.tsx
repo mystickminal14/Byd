@@ -33,7 +33,7 @@ export default function AdasTheatre({ clips }: { clips: AdasClip[] }) {
 
   return (
     <section ref={sectionRef} className="aurora relative overflow-hidden bg-abyss py-24 md:py-32">
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-aqua">Intelligent Safety</p>
         <AnimatedHeading text="A Co-Pilot That Never Blinks" className="heading-md max-w-3xl text-foam" />
 
@@ -44,7 +44,7 @@ export default function AdasTheatre({ clips }: { clips: AdasClip[] }) {
                 key={c.id}
                 onClick={() => setActive(i)}
                 className={cn(
-                  'rounded-full px-6 py-3 font-numeric text-xs font-semibold tracking-[0.14em] uppercase transition-all duration-300',
+                  'rounded-full px-6 py-3 font-numeric text-xs font-semibold tracking-[0.08em] uppercase transition-all duration-300',
                   i === active
                     ? 'bg-aqua text-abyss shadow-glow'
                     : 'glass text-mist hover:text-foam',

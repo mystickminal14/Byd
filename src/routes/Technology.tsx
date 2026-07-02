@@ -56,7 +56,7 @@ export default function Technology() {
   return (
     <>
       <section className="aurora relative overflow-hidden bg-abyss pt-32 pb-20 md:pt-44 md:pb-28">
-        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
           <p className="kicker mb-4 text-aqua">Engineering</p>
           <AnimatedHeading text="Born Electric," className="heading-lg text-foam" />
           <Reveal from="up" distance={60}>

@@ -92,8 +92,8 @@ export default function Hero() {
             { v: '482 km', l: 'Max WLTP Range' },
             { v: '10 yr', l: 'Battery Warranty*' },
           ].map((s) => (
-            <div key={s.l} className="glass px-5 py-4">
-              <p className="numeric text-2xl font-semibold text-foam md:text-3xl">{s.v}</p>
+            <div key={s.l} className="glass px-3 py-3 md:px-5 md:py-4">
+              <p className="numeric text-lg font-semibold text-foam sm:text-2xl md:text-3xl">{s.v}</p>
               <p className="mt-1 text-[11px] tracking-wide text-mist uppercase">{s.l}</p>
             </div>
           ))}

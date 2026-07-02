@@ -74,8 +74,8 @@ export default function VehicleHero({ vehicle }: { vehicle: Vehicle }) {
 
         <div data-vh-fade className="mt-12 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl opacity-0 md:grid-cols-4">
           {vehicle.highlightStats.map((s) => (
-            <div key={s.label} className="glass px-5 py-4">
-              <p className="numeric text-2xl font-semibold text-foam md:text-3xl">
+            <div key={s.label} className="glass px-3 py-3 md:px-5 md:py-4">
+              <p className="numeric text-lg font-semibold text-foam sm:text-2xl md:text-3xl">
                 <Counter value={s.value} />
                 {s.unit && <span className="ml-1 text-sm text-aqua">{s.unit}</span>}
               </p>

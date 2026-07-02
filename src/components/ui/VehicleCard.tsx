@@ -43,7 +43,7 @@ export default function VehicleCard({
           )}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-abyss/55 via-transparent to-transparent" />
-        <span className="glass absolute top-4 left-4 rounded-full px-4 py-1.5 text-[10px] font-semibold tracking-[0.18em] text-foam uppercase">
+        <span className="glass absolute top-4 left-4 rounded-full px-4 py-1.5 text-[10px] font-semibold tracking-[0.08em] text-foam uppercase">
           {vehicle.badge}
         </span>
         <span className="glass absolute top-4 right-4 rounded-full px-4 py-1.5 font-numeric text-[10px] font-semibold tracking-[0.08em] text-aqua uppercase">
@@ -70,8 +70,8 @@ export default function VehicleCard({
         {/* stat ledger */}
         <div className="mt-6 grid grid-cols-3 divide-x divide-abyss-line border-y border-abyss-line">
           {stats.map((s) => (
-            <div key={s.label} className="px-3 py-4 first:pl-0 last:pr-0">
-              <p className="numeric text-lg font-semibold text-foam">
+            <div key={s.label} className="px-2 py-3 first:pl-0 last:pr-0 md:px-3 md:py-4">
+              <p className="numeric text-base font-semibold text-foam md:text-lg">
                 {s.value}
                 {s.unit && <span className="ml-0.5 text-[11px] font-medium text-aqua">{s.unit}</span>}
               </p>

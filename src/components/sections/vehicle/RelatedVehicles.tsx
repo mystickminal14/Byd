@@ -7,7 +7,7 @@ import VehicleCard from '@/components/ui/VehicleCard';
 export default function RelatedVehicles({ vehicles }: { vehicles: Vehicle[] }) {
   return (
     <section className="border-t border-abyss-line bg-abyss py-24 md:py-28">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-aqua">Keep Exploring</p>
         <AnimatedHeading text="More from the Fleet" className="heading-md text-foam" />
 

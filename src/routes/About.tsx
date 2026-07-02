@@ -64,7 +64,7 @@ export default function About() {
           <div className="mt-8 flex items-center gap-4">
             <button
               onClick={() => setMuted((m) => !m)}
-              className="glass inline-flex items-center gap-2 rounded-full px-5 py-3 text-xs font-semibold tracking-[0.16em] text-foam uppercase"
+              className="glass inline-flex items-center gap-2 rounded-full px-5 py-3 text-xs font-semibold tracking-[0.08em] text-foam uppercase"
             >
               {muted ? 'Sound On' : 'Mute'}
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -93,14 +93,14 @@ export default function About() {
                 <Counter value={s.v} />
                 <span className="text-aurora">{s.s}</span>
               </p>
-              <p className="mt-2 text-xs tracking-[0.18em] text-mist-dim uppercase">{s.l}</p>
+              <p className="mt-2 text-xs tracking-[0.08em] text-mist-dim uppercase">{s.l}</p>
             </div>
           ))}
         </Reveal>
       </section>
 
       <section className="bg-pearl py-24 text-ink md:py-32">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
             <div>
               <p className="kicker mb-4 text-electric">The Story</p>
@@ -140,7 +140,7 @@ export default function About() {
               {RATINGS.map((r) => (
                 <div key={r.label} className="card-pearl flex flex-col items-center gap-3 rounded-3xl p-6">
                   <img src={r.img} alt={r.label} loading="lazy" className="h-14 w-auto object-contain" />
-                  <p className="text-xs font-semibold tracking-[0.14em] text-ink-soft uppercase">{r.label}</p>
+                  <p className="text-xs font-semibold tracking-[0.08em] text-ink-soft uppercase">{r.label}</p>
                 </div>
               ))}
             </Reveal>

@@ -13,7 +13,7 @@ export default function VehicleGallery({ images }: { images: GalleryImage[] }) {
 
   return (
     <section className="border-t border-abyss-line bg-abyss-soft py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-aqua">Gallery</p>
         <AnimatedHeading text="Study the Details" className="heading-md text-foam" />
 
