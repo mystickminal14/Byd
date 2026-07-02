@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+/*
+ * BYD Nepal — "Deep Ocean" design system.
+ * A dark, cinematic canvas inspired by BYD's Ocean Aesthetics: abyss-dark
+ * surfaces, electric aqua accents, aurora gradients and pearl-light content
+ * sections for contrast. Modern geometric type (Outfit) with Space Grotesk
+ * for numbers gives it a precise EV-tech voice — deliberately distinct from
+ * the condensed, editorial Ford system.
+ */
+@theme {
+  /* Ocean accents */
+  --color-aqua: #00e0ff;
+  --color-aqua-deep: #00a8d6;
+  --color-electric: #1668ff;
+  --color-electric-deep: #0a3fae;
+  --color-seafoam: #7ff5d4;
+
+  /* Dark abyss surfaces */
+  --color-abyss: #030a12;
+  --color-abyss-soft: #06121f;
+  --color-abyss-raised: #0a1a2c;
+  --color-abyss-line: #12283d;
+
+  /* Pearl light surfaces */
+  --color-pearl: #f4f8fb;
+  --color-pearl-soft: #e9f0f6;
+  --color-pearl-line: #d9e4ee;
+
+  /* Text */
+  --color-foam: #eaf4fb;
+  --color-mist: #9db4c8;
+  --color-mist-dim: #5f7891;
+  --color-ink: #071320;
+  --color-ink-soft: #3d5468;
+
+  /* Type system */
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-numeric: "Space Grotesk", "Archivo", sans-serif;
+
+  /* Tighter radii — engineered, not bubbly */
+  --radius-3xl: 1rem;
+  --radius-2xl: 0.75rem;
+  --radius-xl: 0.5rem;
+
+  /* Shadows & glows */
+  --shadow-card: 0 1px 2px rgb(3 10 18 / 0.2), 0 24px 60px -30px rgb(3 10 18 / 0.55);
+  --shadow-float: 0 40px 90px -40px rgb(3 10 18 / 0.8);
+  --shadow-glow: 0 0 60px -12px rgb(0 224 255 / 0.45);
+  --shadow-pearl: 0 2px 10px rgb(7 19 32 / 0.05), 0 24px 60px -30px rgb(7 19 32 / 0.18);
+}
+
+html {
+  scroll-behavior: auto;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  @apply bg-abyss text-foam font-body antialiased;
+  overflow-x: clip;
+  line-height: 1.65;
+}
+
+::selection {
+  background: var(--color-aqua);
+  color: #04121c;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-abyss-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-aqua);
+  border-radius: 99px;
+}
+
+/* ---- Typographic scale ----
+   Expanded-width Archivo caps: the automotive voice of the site. */
+@utility heading-xl {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 118%;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 8.6vw, 7.75rem);
+  line-height: 0.94;
+  letter-spacing: -0.015em;
+}
+@utility heading-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 115%;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 5.6vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+@utility heading-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 112%;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 3.8vw, 2.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.005em;
+}
+/* display names on cards / menus */
+@utility display-name {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-stretch: 112%;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+@utility kicker {
+  font-family: var(--font-numeric);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+@utility numeric {
+  font-family: var(--font-numeric);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ---- Text treatments ---- */
+@utility text-aurora {
+  color: var(--color-aqua);
+}
+@utility text-stroke-foam {
+  -webkit-text-stroke: 1.5px rgb(234 244 251 / 0.32);
+  color: transparent;
+}
+@utility text-stroke-abyss {
+  -webkit-text-stroke: 1.5px rgb(7 19 32 / 0.2);
+  color: transparent;
+}
+
+/* ---- Surfaces ---- */
+@utility glass {
+  background: rgb(10 26 44 / 0.55);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgb(0 224 255 / 0.12);
+}
+@utility glass-light {
+  background: rgb(244 248 251 / 0.82);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgb(255 255 255 / 0.65);
+}
+@utility card-dark {
+  background: var(--color-abyss-raised);
+  border: 1px solid var(--color-abyss-line);
+  box-shadow: var(--shadow-card);
+}
+@utility card-pearl {
+  background: #ffffff;
+  border: 1px solid var(--color-pearl-line);
+  box-shadow: var(--shadow-pearl);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility shadow-float {
+  box-shadow: var(--shadow-float);
+}
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+@utility shadow-pearl {
+  box-shadow: var(--shadow-pearl);
+}
+
+/* ---- Atmosphere ---- */
+/* aurora bloom for dark sections */
+@utility aurora {
+  position: relative;
+}
+.aurora::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 45% at 78% 0%, rgb(22 104 255 / 0.16), transparent 65%),
+    radial-gradient(45% 40% at 12% 8%, rgb(0 224 255 / 0.1), transparent 60%);
+}
+/* hairline gradient ring used on chips/cards */
+@utility ring-aqua {
+  border: 1px solid rgb(0 224 255 / 0.25);
+}
+@utility grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Reveal helpers (shared with animation components) ---- */
+.split-char {
+  display: inline-block;
+  will-change: transform;
+}
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.14em 0.02em 0.18em;
+  margin: -0.14em -0.02em -0.18em;
+  white-space: nowrap;
+}
+.reveal-clip {
+  will-change: clip-path;
+}
+.reveal-img {
+  will-change: transform;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-clip {
+    clip-path: none !important;
+  }
+}
