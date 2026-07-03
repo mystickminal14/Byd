@@ -53,6 +53,8 @@
 
 html {
   scroll-behavior: auto;
+  /* pre-animation Reveal offsets must never create sideways scroll */
+  overflow-x: clip;
 }
 html.lenis,
 html.lenis body {

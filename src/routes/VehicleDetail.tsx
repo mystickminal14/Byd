@@ -3,6 +3,7 @@ import { getVehicle, getOtherVehicles } from '@/data/vehicles';
 import { SITE } from '@/data/site';
 import useSeo from '@/hooks/useSeo';
 import VehicleHero from '@/components/sections/vehicle/VehicleHero';
+import VehicleSubNav from '@/components/sections/vehicle/VehicleSubNav';
 import VehicleStory from '@/components/sections/vehicle/VehicleStory';
 import VehicleCinematic from '@/components/sections/vehicle/VehicleCinematic';
 import VehicleSpecs from '@/components/sections/vehicle/VehicleSpecs';
@@ -49,6 +50,7 @@ export default function VehicleDetail() {
   return (
     <>
       <VehicleHero vehicle={vehicle} />
+      <VehicleSubNav vehicle={vehicle} />
       <VehicleStory blocks={vehicle.story} />
       <VehicleCinematic image={vehicle.cinematicImage} tagline={vehicle.tagline} name={vehicle.name} />
       <VehicleSpecs specs={vehicle.specs} interiorImage={vehicle.interiorImage} />

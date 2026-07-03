@@ -26,7 +26,7 @@ export default function VariantStudio({ vehicle }: { vehicle: Vehicle }) {
   );
 
   return (
-    <section className="border-t border-pearl-line bg-pearl py-24 text-ink md:py-32">
+    <section id="variants" className="scroll-mt-32 border-t border-pearl-line bg-pearl py-24 text-ink md:py-32">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-electric">Variants & Ownership</p>
         <AnimatedHeading text="Make It Yours" className="heading-md" />

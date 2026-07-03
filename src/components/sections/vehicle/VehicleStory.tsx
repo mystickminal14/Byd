@@ -9,7 +9,7 @@ import Reveal from '@/components/animations/Reveal';
  */
 export default function VehicleStory({ blocks }: { blocks: StoryBlock[] }) {
   return (
-    <section className="bg-pearl py-24 text-ink md:py-32">
+    <section id="story" className="scroll-mt-32 bg-pearl py-24 text-ink md:py-32">
       <div className="mx-auto max-w-[1400px] space-y-24 px-6 md:space-y-36 md:px-10">
         {blocks.map((block, i) => (
           <div

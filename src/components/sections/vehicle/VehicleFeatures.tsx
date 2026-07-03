@@ -6,7 +6,7 @@ import Icon from '@/components/ui/Icon';
 /** Six-up feature grid with category icons on glass cards. */
 export default function VehicleFeatures({ features }: { features: Feature[] }) {
   return (
-    <section className="border-t border-abyss-line bg-abyss-soft py-24 md:py-32">
+    <section id="features" className="scroll-mt-32 border-t border-abyss-line bg-abyss-soft py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10">
         <p className="kicker mb-4 text-aqua">Highlights</p>
         <AnimatedHeading text="Everything You Feel First" className="heading-md max-w-3xl text-foam" />

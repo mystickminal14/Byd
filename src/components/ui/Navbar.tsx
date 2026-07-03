@@ -71,18 +71,27 @@ export default function Navbar() {
                     megaOpen || isActive('/models') ? 'text-aqua' : 'text-foam/80 hover:text-foam',
                   )}
                 >
-                  Models
-                  <svg
-                    viewBox="0 0 24 24"
-                    className={cn('h-3.5 w-3.5 transition-transform duration-300', megaOpen && 'rotate-180')}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  {(megaOpen || isActive('/models')) && (
+                    <motion.span
+                      layoutId="nav-active-pill"
+                      className="absolute inset-0 rounded-full bg-aqua/10 ring-1 ring-inset ring-aqua/25"
+                      transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-1.5">
+                    Models
+                    <svg
+                      viewBox="0 0 24 24"
+                      className={cn('h-3.5 w-3.5 transition-transform duration-300', megaOpen && 'rotate-180')}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
                   {isActive('/models') && (
-                    <span className="absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-aqua" />
+                    <span className="absolute -bottom-1 left-1/2 z-10 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-aqua shadow-glow animate-[pulse-glow_2s_ease-in-out_infinite]" />
                   )}
                 </button>
               ) : (
@@ -94,9 +103,16 @@ export default function Navbar() {
                       isActive(link.href) ? 'text-aqua' : 'text-foam/80 hover:text-foam',
                     )}
                   >
-                    {link.label}
                     {isActive(link.href) && (
-                      <span className="absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-aqua" />
+                      <motion.span
+                        layoutId="nav-active-pill"
+                        className="absolute inset-0 rounded-full bg-aqua/10 ring-1 ring-inset ring-aqua/25"
+                        transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                      />
+                    )}
+                    <span className="relative z-10">{link.label}</span>
+                    {isActive(link.href) && (
+                      <span className="absolute -bottom-1 left-1/2 z-10 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-aqua shadow-glow animate-[pulse-glow_2s_ease-in-out_infinite]" />
                     )}
                   </Link>
                 </span>
