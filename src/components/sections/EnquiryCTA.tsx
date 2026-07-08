@@ -12,7 +12,7 @@ export default function EnquiryCTA({ vehicleName }: { vehicleName?: string }) {
       <div className="absolute inset-0">
         <Parallax speed={0.3} className="h-[120%] w-full">
           <img
-            src="/assets/home/bottom-bannerPC.jpg"
+            src="/assets/home/bottom-bannerPC.webp"
             alt=""
             loading="lazy"
             className="h-full w-full object-cover"

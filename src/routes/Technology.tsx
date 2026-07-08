@@ -9,32 +9,32 @@ import EnquiryCTA from '@/components/sections/EnquiryCTA';
 const PILLARS = [
   {
     title: 'Blade Battery',
-    image: '/assets/about/blade-battery-pc.jpg',
+    image: '/assets/about/blade-battery-pc.webp',
     body: 'Ultra-safe LFP cells shaped like blades and arrayed into the pack itself. It passes the nail-penetration test — the Everest of battery abuse tests — without fire or explosion.',
   },
   {
     title: 'e-Platform 3.0',
-    image: '/assets/about/e-platform-pc.jpg',
+    image: '/assets/about/e-platform-pc.webp',
     body: 'A dedicated EV skateboard with the 8-in-1 electric powertrain, 800V architecture and heat-pump thermal management. Intelligence, efficiency, safety, aesthetics.',
   },
   {
     title: 'CTB — Cell to Body',
-    image: '/assets/about/ctb-pc.jpg',
+    image: '/assets/about/ctb-pc.webp',
     body: 'The battery pack becomes a structural sandwich with the floor: torsional rigidity jumps, the cabin gains space, and crash energy has fewer places to go.',
   },
   {
     title: 'DiLink Intelligent Cockpit',
-    image: '/assets/about/dilink-pc.jpg',
+    image: '/assets/about/dilink-pc.webp',
     body: 'The rotating touchscreen, OTA updates and intelligent voice — an open cockpit platform that keeps getting smarter after you buy the car.',
   },
   {
     title: 'Intelligent Driving Assistance',
-    image: '/assets/about/auto-pc.jpg',
+    image: '/assets/about/auto-pc.webp',
     body: 'Radar and camera fusion delivers adaptive cruise, lane centring, AEB and cross-traffic protection across the Nepal lineup.',
   },
   {
     title: 'Safety, Certified',
-    image: '/assets/about/safety-pc.jpg',
+    image: '/assets/about/safety-pc.webp',
     body: 'BYD models carry 5-star ratings from Euro NCAP and ANCAP — the body structure is engineered around the battery, not despite it.',
   },
 ];

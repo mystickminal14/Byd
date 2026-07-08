@@ -40,7 +40,7 @@ export default function BladeBattery() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
           <ImageReveal
-            src="/assets/atto3/7.jpg"
+            src="/assets/atto3/7.webp"
             alt="Blade Battery on the official BYD test rig"
             className="rounded-3xl shadow-pearl"
             imgClassName="aspect-[16/9] lg:aspect-auto lg:h-full"
@@ -61,7 +61,7 @@ export default function BladeBattery() {
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           <Reveal className="card-pearl overflow-hidden rounded-3xl">
-            <img src="/assets/atto3/6.jpg" alt="e-Platform 3.0 rolling chassis" loading="lazy" className="aspect-[16/8] w-full object-cover" />
+            <img src="/assets/atto3/6.webp" alt="e-Platform 3.0 rolling chassis" loading="lazy" className="aspect-[16/8] w-full object-cover" />
             <div className="p-7">
               <h3 className="font-display text-xl font-semibold">e-Platform 3.0</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
@@ -71,7 +71,7 @@ export default function BladeBattery() {
             </div>
           </Reveal>
           <Reveal delay={0.12} className="card-pearl overflow-hidden rounded-3xl">
-            <img src="/assets/about/ctb-pc.jpg" alt="CTB cell-to-body construction layers" loading="lazy" className="aspect-[16/8] w-full object-cover" />
+            <img src="/assets/about/ctb-pc.webp" alt="CTB cell-to-body construction layers" loading="lazy" className="aspect-[16/8] w-full object-cover" />
             <div className="p-7">
               <h3 className="font-display text-xl font-semibold">CTB — Cell to Body</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">

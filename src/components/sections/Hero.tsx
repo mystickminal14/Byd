@@ -47,7 +47,7 @@ export default function Hero() {
         <Parallax speed={0.25} className="h-[115%] w-full">
           <img
             data-hero-img
-            src="/assets/home/sealion7.jpg"
+            src="/assets/home/sealion7.webp"
             alt="BYD SEALION 7 pair on a mirror lake at dusk"
             className="h-full w-full object-cover"
             loading="eager"

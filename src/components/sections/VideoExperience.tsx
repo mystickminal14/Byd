@@ -84,12 +84,12 @@ export default function VideoExperience({
       <div ref={frameRef} className="relative h-svh w-full overflow-hidden bg-abyss will-change-transform">
         {/* poster so the frame is never blank before the video paints */}
         <img
-          src={`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`}
+          src={`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.webp`}
           alt={title}
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
           onError={(e) => {
-            e.currentTarget.src = `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`;
+            e.currentTarget.src = `https://i.ytimg.com/vi/${youtubeId}/hqdefault.webp`;
           }}
         />
         <div className="pointer-events-none absolute top-1/2 left-1/2 aspect-video h-[56.25vw] min-h-full w-screen min-w-[177.78vh] -translate-x-1/2 -translate-y-1/2">

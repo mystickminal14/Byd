@@ -15,10 +15,10 @@ const MILESTONES = [
 ];
 
 const RATINGS = [
-  { img: '/assets/about/euro-ncap-pc.jpg', label: 'Euro NCAP' },
-  { img: '/assets/about/ancap-pc.jpg', label: 'ANCAP' },
-  { img: '/assets/about/c-ncap-pc.jpg', label: 'C-NCAP' },
-  { img: '/assets/about/green-ncap-pc.jpg', label: 'Green NCAP' },
+  { img: '/assets/about/euro-ncap-pc.webp', label: 'Euro NCAP' },
+  { img: '/assets/about/ancap-pc.webp', label: 'ANCAP' },
+  { img: '/assets/about/c-ncap-pc.webp', label: 'C-NCAP' },
+  { img: '/assets/about/green-ncap-pc.webp', label: 'Green NCAP' },
 ];
 
 export default function About() {
@@ -118,13 +118,13 @@ export default function About() {
             </div>
             <div className="space-y-6 lg:sticky lg:top-24 lg:self-start">
               <ImageReveal
-                src="/assets/about/about-byd-pc.jpg"
+                src="/assets/about/about-byd-pc.webp"
                 alt="BYD global headquarters campus"
                 className="rounded-3xl shadow-pearl"
                 imgClassName="aspect-[16/10]"
               />
               <ImageReveal
-                src="/assets/about/market-pc.jpg"
+                src="/assets/about/market-pc.webp"
                 alt="BYD lineup"
                 direction="right"
                 className="rounded-3xl shadow-pearl"
@@ -160,7 +160,7 @@ export default function About() {
               </Reveal>
             </div>
             <ImageReveal
-              src="/assets/about/reduction-pc1.jpg"
+              src="/assets/about/reduction-pc1.webp"
               alt="Green forest canopy"
               direction="right"
               className="rounded-3xl shadow-pearl"
